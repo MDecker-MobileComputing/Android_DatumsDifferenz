@@ -22,6 +22,9 @@ import java.util.Date;
  */
 public class MainActivity extends Activity {
 
+    /** 
+     * Lifecycle-Methode. 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
