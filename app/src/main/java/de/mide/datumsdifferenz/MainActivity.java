@@ -15,7 +15,7 @@ import java.util.Date;
 
 
 /**
- * App zur Demonstration Event-Handling für UI-Element "DatePicker".
+ * App zur Demonstration Event-Handling für das UI-Element "DatePicker".
  * <br><br>
  *
  * This project is licensed under the terms of the BSD 3-Clause License.
