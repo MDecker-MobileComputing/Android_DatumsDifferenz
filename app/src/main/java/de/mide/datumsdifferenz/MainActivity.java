@@ -1,6 +1,5 @@
 package de.mide.datumsdifferenz;
 
-
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.app.Activity;
@@ -22,8 +21,8 @@ import java.util.Date;
  */
 public class MainActivity extends Activity {
 
-    /** 
-     * Lifecycle-Methode. 
+    /**
+     * Lifecycle-Methode, lädt Layout-Datei.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-
     /**
      * Berechnet Anzahl Tage zwischen heute und dem als Argument übergebenen Datum.<br>
      * <br>
@@ -40,8 +38,11 @@ public class MainActivity extends Activity {
      * {@code app/build.gradle}.
      *
      * @param jahr Jahreszahl, z.B. 2021
+     *
      * @param monat 1-basierter Monat (1=Januar, 12=Dezember)
+     *
      * @param tagImMonat Tag im Monat, 1 bis 31 (je nach Anzahl Tage in {@code monat})
+     *                   
      * @return Anzahl Tage zwischen heutigem Datum und Datum, das durch die Argumente
      *         beschrieben wird. Zahl ist negativ wenn das Datum in der Vergangenheit
      *         liegt.
