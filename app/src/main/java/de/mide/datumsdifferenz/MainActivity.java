@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
      * @param monat 1-basierter Monat (1=Januar, 12=Dezember)
      *
      * @param tagImMonat Tag im Monat, 1 bis 31 (je nach Anzahl Tage in {@code monat})
-     *                   
+     *
      * @return Anzahl Tage zwischen heutigem Datum und Datum, das durch die Argumente
      *         beschrieben wird. Zahl ist negativ wenn das Datum in der Vergangenheit
      *         liegt.
