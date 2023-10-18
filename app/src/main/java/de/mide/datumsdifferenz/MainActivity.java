@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
      *         beschrieben wird. Zahl ist negativ wenn das Datum in der Vergangenheit
      *         liegt.
      */
-    private int berechneAnzahlTag(int jahr, int monat, int tagImMonat) {
+    private int berechneAnzahlTage(int jahr, int monat, int tagImMonat) {
 
         LocalDate heuteLocalDate   = new LocalDate( new Date() );
         LocalDate anderesLocalDate = LocalDate.parse(jahr + "-" + monat + "-" + tagImMonat);
