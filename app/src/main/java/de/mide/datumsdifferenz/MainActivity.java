@@ -32,8 +32,9 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Berechnet Anzahl Tage zwischen heute und dem als Argument übergebenen Datum.<br>
-     * <br>
+     * Berechnet Anzahl Tage zwischen heute und dem als Argument übergebenen Datum.
+     * <br><br>
+     *
      * Verwendet die Bibliothek "joda-time", siehe Dependency-Eintrag in Datei
      * {@code app/build.gradle}.
      *
