@@ -1,10 +1,9 @@
-# Android-App: Event Handling for DatePicker #
+# Android-App: Event Handling für DatePicker #
 
 <br>
 
-Android app containing one [DatePicker](https://developer.android.com/reference/android/widget/DatePicker) element
-in its only layout file.
-As practice event handling for this app has to be added.
+Dieses Repository enthält eine native Android-App (Java) mit einem [DatePicker](https://developer.android.com/reference/android/widget/DatePicker)-Element.
+Als Übung muss die Ereignisbehandlung dieses Element implementiert werden.
 
 <br>
 
