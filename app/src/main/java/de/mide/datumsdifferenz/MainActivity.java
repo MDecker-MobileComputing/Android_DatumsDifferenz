@@ -25,11 +25,12 @@ public class MainActivity extends Activity {
      * Lifecycle-Methode, lädt Layout-Datei.
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState ) {
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_main );
     }
+
 
     /**
      * Berechnet Anzahl Tage zwischen heute und dem als Argument übergebenen Datum.
@@ -48,13 +49,13 @@ public class MainActivity extends Activity {
      *         beschrieben wird. Zahl ist negativ wenn das Datum in der Vergangenheit
      *         liegt.
      */
-    private int berechneAnzahlTage(int jahr, int monat, int tagImMonat) {
+    private int berechneAnzahlTage( int jahr, int monat, int tagImMonat ) {
 
-        LocalDate heuteLocalDate   = new LocalDate( new Date() );
-        LocalDate anderesLocalDate = LocalDate.parse(jahr + "-" + monat + "-" + tagImMonat);
+        final LocalDate heuteLocalDate   = new LocalDate( new Date() );
+        final LocalDate anderesLocalDate = LocalDate.parse( jahr + "-" + monat + "-" + tagImMonat );
 
         // Klasse Days ist aus joda-time
-        Days days = Days.daysBetween(heuteLocalDate, anderesLocalDate);
+        Days days = Days.daysBetween( heuteLocalDate, anderesLocalDate );
 
         return days.getDays();
     }
