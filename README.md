@@ -3,7 +3,10 @@
 <br>
 
 Dieses Repository enthält eine native Android-App (Java) mit einem [DatePicker](https://developer.android.com/reference/android/widget/DatePicker)-Element.
-Als Übung muss die Ereignisbehandlung dieses Element implementiert werden.
+Als Übung muss die Ereignisbehandlung dieses Element implementiert werden, so dass die
+Anzahl der Tage zwischen dem aktuellen Datum und dem im *DatePicker*-Element gewählten
+Datum berechnet und angezeigt wird.
+
 
 <br>
 
