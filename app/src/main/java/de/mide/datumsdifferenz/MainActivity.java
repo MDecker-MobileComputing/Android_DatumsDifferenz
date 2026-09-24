@@ -6,11 +6,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.LocalDate;
+import java.util.Calendar;
 
-import java.util.Date;
+
 
 
 /**
@@ -34,10 +32,6 @@ public class MainActivity extends Activity {
 
     /**
      * Berechnet Anzahl Tage zwischen heute und dem als Argument übergebenen Datum.
-     * <br><br>
-     *
-     * Verwendet die Bibliothek "joda-time", siehe Dependency-Eintrag in Datei
-     * {@code app/build.gradle}.
      *
      * @param jahr Jahreszahl, z.B. 2021
      *
@@ -51,13 +45,28 @@ public class MainActivity extends Activity {
      */
     private int berechneAnzahlTage( int jahr, int monat, int tagImMonat ) {
 
-        final LocalDate heuteLocalDate   = new LocalDate( new Date() );
-        final LocalDate anderesLocalDate = LocalDate.parse( jahr + "-" + monat + "-" + tagImMonat );
+        Calendar heute = Calendar.getInstance();
 
-        // Klasse Days ist aus joda-time
-        Days days = Days.daysBetween( heuteLocalDate, anderesLocalDate );
+        Calendar datum = Calendar.getInstance();
+        datum.set( Calendar.YEAR, jahr               );
+        datum.set( Calendar.MONTH, monat - 1         );
+        datum.set( Calendar.DAY_OF_MONTH, tagImMonat );
 
-        return days.getDays();
+        // Uhrzeit bei beiden Datumswerten auf Mitternacht setzen.
+        heute.set( Calendar.HOUR_OF_DAY, 0 );
+        heute.set( Calendar.MINUTE     , 0 );
+        heute.set( Calendar.SECOND     , 0 );
+        heute.set( Calendar.MILLISECOND, 0 );
+
+        datum.set( Calendar.HOUR_OF_DAY, 0 );
+        datum.set( Calendar.MINUTE     , 0 );
+        datum.set( Calendar.SECOND     , 0 );
+        datum.set( Calendar.MILLISECOND, 0 );
+
+        long differenzMillis =
+                datum.getTimeInMillis() - heute.getTimeInMillis();
+
+        return (int) (differenzMillis / (24L * 60L * 60L * 1000L));
     }
 
 }

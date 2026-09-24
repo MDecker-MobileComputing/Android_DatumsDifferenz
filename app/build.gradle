@@ -4,12 +4,14 @@ plugins {
 
 android {
     namespace 'de.mide.datumsdifferenz'
-    compileSdk 36
+    compileSdk {
+        version = release(37)
+    }
 
     defaultConfig {
         applicationId "de.mide.datumsdifferenz"
         minSdk 24
-        targetSdk 36
+        targetSdk 37
         versionCode 1
         versionName "1.0"
 
@@ -18,26 +20,23 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            optimization {
+                enable false
+            }
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 
 dependencies {
-
+    implementation libs.activity.ktx
     implementation libs.appcompat
-    implementation libs.material
-    implementation libs.activity
     implementation libs.constraintlayout
+    implementation libs.material
     testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-
-    // neueste Version von "joda-time": https://mvnrepository.com/artifact/joda-time/joda-time
-    implementation 'joda-time:joda-time:2.14.0'
+    androidTestImplementation libs.ext.junit
 }
