@@ -9,8 +9,6 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 
-
-
 /**
  * App zur Demonstration Event-Handling für das UI-Element "DatePicker".
  * <br><br>
